@@ -1,5 +1,10 @@
 function preload() {
     world_start = loadSound("world_start.wav");
+    mario_jump = loadSound("jump.wav");
+    mario_kick = loadSound("kick.wav")
+    mario_coin = loadSound("coin.wav")
+    mario_die = loadSound("mariodie.wav")
+    mario_game_over = loadSound("gameover.wav")
     setSprites();
     MarioAnimation();
 }
@@ -20,6 +25,7 @@ function setup() {
 function GotResults(results) {
     if (results.length > 0) {
         console.log(results)
+        document.getElementById("game_status").innerHTML = "Game Is Loaded "
         noseX = results[0].pose.nose.x;
         noseY = results[0].pose.nose.y;
 
